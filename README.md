@@ -15,6 +15,12 @@ A modern, responsive travel website built with React, TypeScript, and Vite. Jado
 - 🎯 **Type Safety** - TypeScript for better development experience
 - 🔧 **Easy Customization** - Modular component structure
 
+## 🚀 Deployment
+
+The project is hosted live on **GitHub Pages**.
+
+🔗 **Live Demo:** [https://abdullah-rust.github.io/transcend](https://abdullah-rust.github.io/transcend)
+
 ## 🚀 Tech Stack
 
 - **Frontend Framework:** React
