@@ -1,0 +1,330 @@
+.book {
+  padding: 6rem 0;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Side - Steps */
+.stepsSection {
+  max-width: 500px;
+}
+
+.subtitle {
+  color: #df6951;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #181e4b;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Gap thoda zyaada kiya */
+}
+
+.step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Icon Colors from Image */
+.iconYellow {
+  background: #f0bb1f;
+}
+.iconOrange {
+  background: #f15a2b;
+}
+.iconBlue {
+  background: #006380;
+}
+
+.stepIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #181e4b;
+  margin-bottom: 0.5rem;
+}
+
+.stepDescription {
+  color: #5e6282;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Right Side - Trip Card Section */
+.cardSection {
+  display: flex;
+  justify-content: center;
+  position: relative; /* Ongoing card ke liye zaroori */
+  padding: 2rem; /* Ongoing card ko jagah dene ke liye padding */
+}
+
+.tripCard {
+  background: #fff;
+  border-radius: 24px;
+  /* Image mein shadow zyaada prominent hai aur thoda blue/purple-ish */
+  box-shadow: 0 18px 40px rgba(35, 34, 46, 0.1);
+  overflow: hidden;
+  max-width: 350px;
+  width: 100%;
+  z-index: 10;
+}
+
+.tripImage {
+  width: 100%;
+  height: 160px; /* Image mein height thodi kam hai */
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
+}
+
+.tripImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tripInfo {
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.tripTitle {
+  font-size: 1.2rem; /* Thoda chota kiya */
+  font-weight: 700;
+  color: #181e4b;
+  margin-bottom: 0.3rem;
+}
+
+.tripDates {
+  color: #5e6282;
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.tripIcons {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #8a8f9b;
+}
+
+.icon {
+  display: inline-flex; /* SVG ko center karne ke liye */
+  cursor: pointer;
+  height: 18px; /* Height set ki for SVG icons */
+}
+
+/* People Going & Heart Icon */
+.peopleGoing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.peopleIcon {
+  width: 20px; /* Chota icon jaisa image mein hai */
+  height: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.peopleText {
+  color: #5e6282;
+  font-size: 0.9rem;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+.heartIcon {
+  cursor: pointer;
+  color: #8a8f9b;
+}
+
+/* 🌟 Ongoing Trip Card (Absolute Positioned) 🌟 */
+.ongoingTripCard {
+  position: absolute;
+  /* Main card ke right aur bottom corner ke qareeb position kiya */
+  right: 0;
+  bottom: -20px;
+
+  width: 200px; /* Size adjust kiya */
+  background: #fff;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  z-index: 15; /* Main card se upar */
+}
+
+.ongoingProfile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-top: 0.2rem; /* Image mein yeh thoda neeche hai */
+}
+
+.ongoingContent {
+  flex-grow: 1;
+}
+
+.ongoingText {
+  color: #5e6282;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.ongoingTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #181e4b;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.progressBar {
+  width: 80%; /* Image mein progress bar chota hai */
+  height: 5px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.2rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: #8a8f9b; /* Image mein color greyish blue hai */
+  border-radius: 3px;
+}
+
+.progressDetail {
+  color: #5e6282;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .book {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .steps {
+    gap: 1.5rem;
+  }
+
+  .step {
+    gap: 1rem;
+  }
+
+  .stepIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .stepTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardSection {
+    padding: 1rem; /* Mobile par padding kam ki */
+  }
+
+  .tripCard {
+    max-width: 100%;
+  }
+
+  /* Ongoing card ki position adjust ki mobile ke liye */
+  .ongoingTripCard {
+    right: 1rem;
+    bottom: -10px;
+    width: 180px;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stepIcon {
+    align-self: center;
+  }
+
+  .tripInfo {
+    padding: 1.25rem;
+  }
+
+  .peopleGoing {
+    /* Mobile par space-between hi rehne diya */
+  }
+
+  .ongoingTripCard {
+    display: none; /* Bahut chote screens par hide kar diya */
+  }
+}

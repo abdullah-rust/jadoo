@@ -1,0 +1,118 @@
+.brands {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  /* Item ki height badhai taa-ke bade logo ko jagah mil sake */
+  height: 110px;
+  cursor: pointer;
+}
+
+.brandLogo {
+  max-width: 100%;
+  /* 🌟 FIX: Logo ki height 45px ki taa-ke woh bade aur uniform dikhein 🌟 */
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+/* Grayscale aur Opacity for non-highlighted logos */
+.grayscaleLogo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+/* Highlighted Item (Active state) */
+.highlightedItem {
+  /* Padding adjust ki taa-ke white box achcha dikhe */
+  padding: 1.5rem 3rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  transform: translateY(-10px);
+}
+
+/* Highlighted logo ke liye koi filter ya opacity nahi */
+.highlightedItem .brandLogo {
+  filter: none;
+  opacity: 1;
+  transform: none;
+}
+
+/* Non-highlighted item par hover ka effect */
+.brandItem:not(.highlightedItem):hover .brandLogo {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .brandsGrid {
+    gap: 1.5rem;
+  }
+  .highlightedItem {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .brands {
+    padding: 3rem 0;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  .brandsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  /* Item aur Logo ki height mobile par adjust ki */
+  .brandItem {
+    height: 90px;
+  }
+  .brandLogo {
+    height: 35px;
+  }
+  .highlightedItem {
+    padding: 1rem;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .brandsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .brandItem {
+    height: 70px;
+  }
+  .brandLogo {
+    height: 100px;
+  }
+}

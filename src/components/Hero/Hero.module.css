@@ -1,0 +1,250 @@
+/* Hero.module.css - Finalized CSS */
+
+/* --- 1. Base Structure & Layout --- */
+.hero {
+  position: relative;
+  padding: 8rem 0 4rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #252b55;
+  overflow: hidden; /* Bahar nikli hui cheezon ko chupanay ke liye */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Content ko SVG se upar rakha */
+}
+
+.content {
+  max-width: 500px;
+}
+
+/* --- 2. Typography & Text Styles --- */
+.subtitle {
+  color: #df6951; /* Orange/Red color */
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #252b55; /* Dark blue color */
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: #df6951;
+  position: relative;
+}
+
+/* Title ke highlight ke neeche underline effect */
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(223, 105, 81, 0.2);
+  z-index: -1;
+}
+
+.description {
+  color: rgba(48, 48, 48, 0.8);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* --- 3. Button Group --- */
+.buttons {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Primary Button */
+.primaryBtn {
+  background: #f1a501; /* Yellow/Orange color */
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(223, 105, 81, 0.3);
+  cursor: pointer;
+}
+
+.primaryBtn:hover {
+  background: #c55a44;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(223, 105, 81, 0.4);
+}
+
+/* Demo Button */
+.demoBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: none;
+  border: none;
+  color: #68697b; /* Greyish color */
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.demoBtn:hover {
+  color: #df6951;
+}
+
+.playCircle {
+  width: 50px;
+  height: 50px;
+  background: #df6951;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 15px 30px rgba(223, 105, 81, 0.4);
+}
+
+.demoBtn:hover .playCircle {
+  transform: scale(1.1);
+}
+
+.playIcon {
+  color: white;
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+/* --- 4. Image Section & SVG Background --- */
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* SVG Mesh Background - Top Right Corner */
+.svgBackground {
+  position: absolute;
+  top: -50px; /* Thora aur upar shift kiya */
+  right: -50px; /* Thora aur right shift kiya */
+  width: 650px; /* Size adjust kiya */
+  height: 650px;
+  z-index: 1;
+  opacity: 1; /* Full opacity rakha */
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3; /* Image ko sabse upar rakha */
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- 5. Mobile & Tablet Styles (Media Queries) --- */
+
+@media (max-width: 992px) {
+  /* Tablet size */
+  .hero {
+    padding: 6rem 0 2rem;
+    min-height: auto; /* Height auto kar di */
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 1.5rem;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .imageContainer {
+    height: 350px;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  /* SVG adjustment for tablet views */
+  .svgBackground {
+    width: 400px;
+    height: 400px;
+    top: 0px;
+    right: -100px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Small mobile devices */
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .primaryBtn {
+    width: 100%; /* Full width for better tap target */
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .demoBtn {
+    /* Mobile par demo button ka text color title color jaisa rakha */
+    color: #252b55;
+  }
+
+  .svgBackground {
+    display: none; /* Bohat chotay screens par SVG ko hide kar diya */
+  }
+}

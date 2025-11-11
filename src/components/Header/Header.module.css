@@ -1,0 +1,205 @@
+/* ========================
+   1. Base Header & Container
+   ======================== */
+.header {
+  /* Header ko top par fix karne ke liye */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent; /* Default transparent */
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Jab scroll ho tab header ka style */
+.header.scrolled {
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========================
+   2. Logo Styling
+   ======================== */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* Font color set karein agar logo text hota, lekin SVG hai isliye: */
+  color: #000000;
+  padding: 5px;
+}
+
+/* Figma se aayi hui SVG element ki styling */
+.logoSVG {
+  /* Size adjust karne ki zaroorat nahi kyunki yeh SVG ke code mein hai (width="115" height="34") */
+  /* Agar aap size chota karna chahte hain toh yahan de sakte hain: */
+  /* width: 100px; */
+  /* height: 30px; */
+  display: block;
+}
+
+/* ========================
+   3. Desktop Navigation (nav)
+   ======================== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Links ke beech ka fasla */
+}
+
+.nav a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #f1a501; /* Orange hover color */
+}
+
+.login {
+  /* Login link ko alag style dene ke liye */
+  font-weight: 600 !important;
+}
+
+.signupBtn {
+  color: #010101;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+  border: 2px solid black;
+}
+
+.signupBtn:hover {
+  background-color: #ffb733;
+  border: none;
+  color: white !important;
+}
+
+/* Language / Globe Section */
+.language {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #333333;
+}
+
+.globeIcon {
+  margin-right: 0.3rem;
+  font-size: 1.1rem;
+}
+
+/* ========================
+   4. Mobile Menu & Button
+   ======================== */
+.menuButton {
+  /* Desktop par button ko chupa denge */
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+  padding: 0;
+  z-index: 101;
+}
+
+.mobileMenu {
+  /* Default chupa hua */
+  display: none;
+}
+
+/* ========================
+   5. Responsiveness (Mobile View)
+   ======================== */
+@media (max-width: 992px) {
+  .nav {
+    /* Desktop nav ko mobile par chupa denge */
+    display: none;
+  }
+
+  .menuButton {
+    /* Mobile button ko dikha denge */
+    display: block;
+  }
+
+  .mobileMenu {
+    /* Mobile menu ka basic style */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    padding-top: 5rem;
+    /* Animation ke liye, default screen se bahar */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: block; /* Taa-ke transform kaam kare */
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  /* Jab menu open ho (isMenuOpen == true) */
+  .mobileMenu.active {
+    transform: translateX(0);
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+  }
+
+  .mobileNav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eeeeee;
+    font-weight: 500;
+  }
+
+  /* Buttons ko full width de denge mobile par */
+  .mobileLogin,
+  .mobileSignup {
+    margin-top: 1rem;
+    text-align: center;
+    padding: 0.75rem 0 !important;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .mobileLogin {
+    color: #333 !important;
+    border: 1px solid #ccc;
+  }
+
+  .mobileSignup {
+    background-color: #f1a501;
+    color: #ffffff !important;
+  }
+
+  .mobileLanguage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+}

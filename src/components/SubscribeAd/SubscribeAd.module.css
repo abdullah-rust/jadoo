@@ -1,0 +1,253 @@
+/* --- Base Section Styles --- */
+.subscribeAdSection {
+  padding: 6rem 0;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* --- Main Subscribe Box --- */
+.subscribeBox {
+  background: linear-gradient(180deg, #dfd7f9 0%, #ffffff 100%);
+  border-radius: 129px 20px 20px 20px;
+  padding: 5rem 4rem;
+  text-align: center;
+  position: relative;
+  overflow: visible; /* 🌟 YEH CHANGE KARO - hidden se visible kar do 🌟 */
+  z-index: 5;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+  margin: 40px 0; /* 🌟 Extra margin diya taki icon dikhe 🌟 */
+}
+
+/* --- Floating Paper Plane Icon --- */
+.planeIconContainer {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(180deg, #ff946d 0%, #ff7d68 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  z-index: 20; /* 🌟 Z-index badha do 🌟 */
+  box-shadow: 0 15px 30px rgba(255, 125, 104, 0.4);
+}
+
+.planeIcon {
+  font-size: 28px;
+  color: white;
+}
+
+/* --- Heading --- */
+.heading {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5e6282;
+  margin-bottom: 3rem;
+  z-index: 5;
+  position: relative;
+  line-height: 1.4;
+}
+
+.heading br {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Form and Inputs --- */
+.subscriptionForm {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 650px;
+  margin: 0 auto;
+  z-index: 5;
+  position: relative;
+}
+
+.inputWrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mailIcon {
+  font-size: 1.25rem;
+  color: #39425d;
+  margin-right: 0.75rem;
+  opacity: 0.6;
+}
+
+.emailInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  color: #39425d;
+  background: transparent;
+}
+
+.emailInput::placeholder {
+  color: #39425d;
+  opacity: 0.5;
+}
+
+.subscribeButton {
+  background: linear-gradient(180deg, #ff946d 0%, #ff7d68 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(255, 125, 104, 0.3);
+  white-space: nowrap;
+}
+
+.subscribeButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(255, 125, 104, 0.4);
+}
+
+/* --- Bottom Right Dotted/Plus Pattern --- */
+.dottedPlusPattern {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.7;
+}
+
+.dottedPlusPattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #ff5b5b 2px, transparent 2px),
+    radial-gradient(circle, #babac9 2px, transparent 2px);
+  background-size: 20px 20px, 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .subscribeBox {
+    padding: 4rem 2rem;
+    border-radius: 80px 15px 15px 15px;
+    margin: 30px 0; /* 🌟 Mobile par bhi margin rakho 🌟 */
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .subscriptionForm {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+  }
+
+  .inputWrapper {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .subscribeButton {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .planeIconContainer {
+    top: -25px;
+    right: -25px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .planeIcon {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subscribeAdSection {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .subscribeBox {
+    padding: 3rem 1.5rem;
+    border-radius: 60px 10px 10px 10px;
+    margin: 25px 0; /* 🌟 Mobile margin 🌟 */
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .dottedPlusPattern {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscribeAdSection {
+    padding: 3rem 0;
+  }
+
+  .subscribeBox {
+    padding: 2.5rem 1rem;
+    border-radius: 40px 8px 8px 8px;
+    margin: 20px 0; /* 🌟 Small mobile margin 🌟 */
+  }
+
+  .heading {
+    font-size: 1.3rem;
+  }
+
+  .inputWrapper {
+    padding: 0.75rem 1rem;
+  }
+
+  .subscribeButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .planeIconContainer {
+    top: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .planeIcon {
+    font-size: 20px;
+  }
+}
