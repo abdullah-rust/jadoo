@@ -19,7 +19,7 @@ A modern, responsive travel website built with React, TypeScript, and Vite. Jado
 
 The project is hosted live on **GitHub Pages**.
 
-🔗 **Live Demo:** [https://abdullah-rust.github.io/transcend](https://abdullah-rust.github.io/transcend)
+🔗 **Live Demo:** [https://abdullah-rust.github.io/jadoo](https://abdullah-rust.github.io/jadoo)
 
 ## 🚀 Tech Stack
 
